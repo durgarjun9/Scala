@@ -5,6 +5,7 @@
 
 // NOTE: Always pass the default  values as the end parameters to the methods.
 // naming the passing arguments can also be done, when you have multiple default arguments.
+// while using naming arguments we can pass parameters in different order.
 
 object DefaultArgs extends App{
     
