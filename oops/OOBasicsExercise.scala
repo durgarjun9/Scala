@@ -1,7 +1,7 @@
 import java.util.Date
-object OOBasicsExcercise extends App{
+object OOBasicsExercise extends App{
 
-    // Excercise
+    // Exercise
     /**
       * Implement Novel and Writer Class.
       * Writer: firstName, surName and yearOfBirth
@@ -74,5 +74,5 @@ object OOBasicsExcercise extends App{
 
     counter = counter.getDecrement(4)
     println(counter.currentCount())
-      
+    
 }
