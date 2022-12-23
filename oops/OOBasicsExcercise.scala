@@ -27,7 +27,7 @@ object OOBasicsExcersise extends App{
             novel
         }
     }
-    
+
     val author: Writer = new Writer("Durga Prasad", "Lakumarapu", 1998)
     var novel: Novel = new Novel("My Life as Dev", 2020, author)
     println(novel.authorAge())
@@ -35,6 +35,8 @@ object OOBasicsExcersise extends App{
     println(novel.yearOfRelease)
     novel = novel.copy(2022)
     println(novel.yearOfRelease)
+
+    
   /**
     * Counter Class
         * - receives an Int value
