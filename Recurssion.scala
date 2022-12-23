@@ -1,3 +1,10 @@
+/**
+  * There are two types of recurssions.
+  * 1. Stack 2. Tail
+  * Stack based approach can run out of Stack memory and can throw StackOverflow Error.
+  * In Tail, we use accumalator rather than stack based approach so that we will not go back to previous function call.
+  */
+
 object Recurssion extends App{
     // Concate a String N times. Using Tail Recursive Approach.
     // To make sure our compiler gets this fucntion as Tail Recursive, add @tailrec annotaion on top of the function.
