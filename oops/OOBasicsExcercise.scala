@@ -1,5 +1,5 @@
 import java.util.Date
-object OOBasicsExcersise extends App{
+object OOBasicsExcercise extends App{
 
     // Excercise
     /**
@@ -43,11 +43,36 @@ object OOBasicsExcersise extends App{
         * method: returns currentCount()
         * method: Increment/ Decrement by 1 => new Counter
         * overload: inc / dec to receive a parameter by which increment and decrement will be done. and return new Counter
-        */
+  */
+  
+    class Counter(var count: Int){
 
+      def currentCount(): Int = count
+
+      def getIncrement(): Counter = new Counter(count + 1)
+
+      def getIncrement(i: Int): Counter = new Counter(count + i)
+
+      def getDecrement(): Counter = new Counter(count - 1)
+
+      def getDecrement(i: Int): Counter = new Counter(count - i)
+
+    }
+
+    var counter: Counter = new Counter(10)
+
+    println(counter.currentCount())
+
+    counter = counter.getIncrement()
+    println(counter.currentCount())
+
+    counter = counter.getDecrement()
+    println(counter.currentCount())
+
+    counter = counter.getIncrement(3)
+    println(counter.currentCount())
+
+    counter = counter.getDecrement(4)
+    println(counter.currentCount())
       
-
-
-
-
 }
