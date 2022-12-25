@@ -1,0 +1,1 @@
+object MethodNotations extends App{}
