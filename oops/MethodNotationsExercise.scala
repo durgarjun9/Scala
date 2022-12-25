@@ -17,6 +17,8 @@ object MethodNotationsExercise extends App{
         def learns(course: String): String = s"$name learns $course"
 
         def learnsScala: String = learns("scala")
+
+        def apply(times: Int): String = s"$name watched his fav movie $favMovie $times times."
     }
     
     /**
@@ -47,5 +49,11 @@ object MethodNotationsExercise extends App{
     println(dp.learnsScala)
 
 
+    /**
+      * 4. Overload the apply method to receive a number and returns a String.
+      * dp.apply(2) => "Dp vwatched his fav movie RRR 2 times"
+    */
+    println(dp.apply(2))
+    println(dp(2))
 
 }
