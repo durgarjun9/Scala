@@ -1,0 +1,3 @@
+object MethodNotationsExercise extends App{
+    
+}

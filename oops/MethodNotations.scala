@@ -81,6 +81,4 @@ object MethodNotations extends App{
     println(dp.apply())
     println(dp())   // it has same effect as above.
 
-
-
 }
