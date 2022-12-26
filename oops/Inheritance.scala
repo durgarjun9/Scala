@@ -1,5 +1,5 @@
 // Inheritance in Scala
-object InheritanceAndTraits extends App {
+object Inheritance extends App {
     
     // As most languages scala supports Single Level Inheritance.
     class Animal {
