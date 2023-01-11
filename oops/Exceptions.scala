@@ -1,3 +1,4 @@
+import java.util.Arrays
 object Exceptions extends App{
 
 
@@ -55,8 +56,87 @@ object Exceptions extends App{
 
 
     /** Excersise
+      * 1. Crash your program with a OutOfMemoryError. -> When we try to access more memory than JVM has.
+      * 2. Crash with StackOverFlowError.
+      * 3. PocketCalculator
+      *     add(a,b)
+      *     multiply(a,b)
+      *     divide(a,b)
+      *     subtract(a,b)
+      *    
+      *     Throw
+      *     - Overflow exception if add(a,b) exceeds Int.MAX_VALUE.
+      *     - Underflow exception if subtract(a,b) exceeds Int.MIN_VALUE.
+      *     - MathCalculationException for divison by 0.
       * 
-      */
+    */
+
+    // 1. Crash your program with a OutOfMemoryError.
+
+    // val array: Array[Int] = Array.ofDim[Int](Int.MaxValue)
+    // output of above line: Exception in thread "main" java.lang.OutOfMemoryError: Requested array size exceeds VM limit
+
+
+    // 2. Crash with StackOverFlowError.
+    def infinite: Int = 1 + infinite
+    // val noLimit = infinite
+    // Above line will cause a StackOverFlow Exception.
+
+    // 3. PocketCalculator
+
+    class OverFlowException extends Exception
+    class UnderFlowException extends Exception
+    class MathCalculationException extends Exception
+
+    object PocketCalculator {
+        def add(x: Int, y: Int): Int = {
+            val result = x + y
+            if(x > 0 && y > 0 && result < 0)    // if both inputs are positive but result is negative.
+                throw new OverFlowException
+            else if(x < 0 && y < 0 && result > 0)    // if both inputs are negative but result is positive.
+                throw new UnderFlowException
+            else result
+        }
+
+        def subtract(x: Int, y: Int): Int = {
+            val result = x - y
+            if(x > 0 && y < 0 && result < 0)    
+                throw new OverFlowException
+            else if(x < 0 && y > 0 && result > 0)    
+                throw new UnderFlowException
+            else result
+        }
+
+        def multiply(x: Int, y: Int): Int = {
+            val result = x * y
+            if(x > 0 && y > 0 && result < 0)    
+                throw new OverFlowException
+            else if(x < 0 && y < 0 && result < 0)    
+                throw new OverFlowException
+            else if(x > 0 && y < 0 && result > 0)    
+                throw new UnderFlowException
+            else if(x < 0 && y > 0 && result > 0)    
+                throw new UnderFlowException
+            else result
+        }
+
+        def divide(x: Int, y: Int): Int = {
+            if (y == 0)
+                throw new MathCalculationException
+            else
+                x / y
+            
+        }
+    }
+
+    // println(PocketCalculator.add(Int.MaxValue, 10)) // output: -2147483639      after Overflow defined output: Exceptions$OverFlowException
+    // println(PocketCalculator.add(Int.MinValue, -1))    // Exceptions$UnderFlowException
+    // From above line, we can say that there is no big value than Int.MaxValue in Integer.
+    // next big value will be the negative value.
+
+    
+    // println(PocketCalculator.divide(2, 0))  // Exceptions$MathCalculationException
+
 
 
 }
